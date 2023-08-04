@@ -15,5 +15,9 @@ git -C $out rev-parse HEAD > ${out}.txt
 rm -rf $out/.git
 
 # Lower file size
+rm -rf $out/docs
+rm -rf $out/m4
 rm -rf $out/perf
+rm -rf $out/subprojects
 rm -rf $out/test
+rm -rf $out/util
