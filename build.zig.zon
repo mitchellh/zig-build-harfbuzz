@@ -1,0 +1,10 @@
+.{
+    .name = "harfbuzz",
+    .version = "0.0.0",
+    .dependencies = .{
+        .freetype = .{
+            .url = "https://github.com/mitchellh/zig-build-freetype/archive/5dd8051b95515c3035f1b042f76628ebe044a067.tar.gz",
+            .hash = "122074b0c11cafc9cf8e0a8ce05c0e21a462656aa4e7c7e17379d705b8b7e5bfdc40",
+        },
+    },
+}
