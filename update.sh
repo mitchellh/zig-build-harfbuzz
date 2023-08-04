@@ -21,3 +21,6 @@ rm -rf $out/perf
 rm -rf $out/subprojects
 rm -rf $out/test
 rm -rf $out/util
+
+# Zig doesn't support symlinks
+rm $out/README
