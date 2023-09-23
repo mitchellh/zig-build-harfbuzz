@@ -25,13 +25,15 @@ pub fn build(b: *std.Build) !void {
     var flags = std.ArrayList([]const u8).init(b.allocator);
     defer flags.deinit();
     try flags.appendSlice(&.{
-        "-DHAVE_UNISTD_H",
-        "-DHAVE_SYS_MMAN_H",
         "-DHAVE_STDBOOL_H",
-
-        // We always have pthread
-        "-DHAVE_PTHREAD=1",
     });
+    if (!target.isWindows()) {
+        try flags.appendSlice(&.{
+            "-DHAVE_UNISTD_H",
+            "-DHAVE_SYS_MMAN_H",
+            "-DHAVE_PTHREAD=1",
+        });
+    }
     if (freetype_enabled) try flags.appendSlice(&.{
         "-DHAVE_FREETYPE=1",
 
